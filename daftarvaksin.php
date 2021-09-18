@@ -4,10 +4,18 @@
         <link rel="stylesheet" href="stylevaksin.css">
     </head>
     <body>
+        <header>
+            <nav>
+                <ul class="topnav">
+                    <li><a href="syaratvaksin.html">Syarat</a></li>
+                    <li><a class="active" href="daftarvaksin.php">Pendaftaran</a></li>
+                    <li><a href="#contact">Tempat dan Waktu</a></li>
+                </ul>
+            </nav>
+        </header>
         <div class="container">
-        <fieldset>
-            <legend>Form Pendaftaran Vaksinasi</legend>
-            <form id="formvaksin" name="frmvaksin" method="post" action="form-database.php">
+            <h1> Formulir Vaksinasi</h1> 
+            <form class="formvaksin" name="frmvaksin" method="post" action="form-database.php"> 
                 <p>
                     <label for="Nama">Nama</label><br>
                     <input type="text" name="Name" id="Name">
@@ -49,10 +57,10 @@
                         ?>
                     </select>
                 </p>
+                <br><br>
                 <button class="button button1" type="submit" form="" value="Submit">Submit</button>
                 <button class="button button2" type="button" href="syaratvaksin.html">Kembali </button>
             </form>
-        </fieldset>
         </div>
     </body>
 </html>

@@ -1,14 +1,8 @@
-.container {
-    border: 5px;
-    border-radius: 15px;
-    background-color: #63633f;
-    color: white;
-    padding: 8% 13%;
-    font-size: 16px;
-    margin: 4px 2px;
+.container{
+    text-align: center;
 }
-.loadingline {
-    color:aqua
+.container ol li{
+    text-align: left;
 }
 .button {
     border: none;
@@ -20,8 +14,6 @@
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    top: 50%;
-    left: 50%;
 }
 .button1 {background-color: #09ac0e;}
 .button2 {background-color: #b61111;}
@@ -30,4 +22,60 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
+}
+
+.topnav {
+    background-color: rgb(206, 94, 94);
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.topnav li{
+    list-style-type: none;
+}
+
+.topnav li a{
+    float: left;
+    color: #ffffff;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav li a:hover {
+    background-color: #ffffff;
+    color: #cc5252;
+  }
+  
+.topnav li a.active {
+    background-color: #ffffff;
+    color: #c72b2b;
+}
+
+.formvaksin {
+    border:5px;
+    background-color: white;
+    text-align: center;
+    border-radius: 15px;
+    width: 400px;
+    height: 500px;
+    display: inline-block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.formvaksin p{
+    text-align: left;
+    margin: 10px 10px 10px 10px;
+}
+
+.formvaksin p input{
+    width: 370px;
+}
+
+.gender{
+    width: 0px 0px 0px 370px;
+}
+body {
+    background-color: rgb(207, 207, 207);
 }
