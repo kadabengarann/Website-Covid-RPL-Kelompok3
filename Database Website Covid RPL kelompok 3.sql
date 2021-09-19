@@ -22,18 +22,17 @@ CREATE TABLE daftar_swab (
 
 ALTER TABLE daftar_swab ADD CONSTRAINT daftar_swab_pk PRIMARY KEY ( id_form );
 
-CREATE TABLE data_covid (
-    `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+CREATE TABLE IF NOT EXISTS `data_covid` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
   `nama_kabupaten_kota` varchar(50) DEFAULT NULL,
   `positif` int(11) DEFAULT NULL,
   `sembuh` int(11) DEFAULT NULL,
   `dirawat` int(11) DEFAULT NULL,
   `meninggal` int(11) DEFAULT NULL,
   `suspek` int(11) DEFAULT NULL,
-  `updated_at` timestamp NULL DEFAULT NULL
-);
-
-ALTER TABLE data_covid ADD CONSTRAINT data_covid_pk PRIMARY KEY ( id );
+  `updated_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 
 CREATE TABLE isoman (
     id_petunjuk   INTEGER NOT NULL,
@@ -101,6 +100,7 @@ CREATE TABLE IF NOT EXISTS `admins` (
   `password` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`admin_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 
 INSERT INTO `admins` (`admin_id`, `password`) VALUES
 	('admin1', 'password');
