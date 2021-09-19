@@ -14,7 +14,7 @@
   <body>
     <div id="belakang"></div>
     <div class="wrapper">
-      <img src="RS Mayapada.jpg" height="200" width="200">
+      <img src="./RS Mayapada.jpg" height="200" width="200">
       <h2>RS Mayapada Jakarta Selatan</h2>
       <p>Salah satu rumah sakit terbaik di Jakarta Selatan / best hospital in Jakarta Selatan, dengan layanan kesehatan terlengkap & didukung oleh tenaga medis terbaik.
       <br></br>
