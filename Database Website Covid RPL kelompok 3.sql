@@ -42,6 +42,19 @@ CREATE TABLE isoman (
 
 ALTER TABLE isoman ADD CONSTRAINT isoman_pk PRIMARY KEY ( id_petunjuk );
 
+CREATE TABLE pengguna (
+    username    VARCHAR(50) NOT NULL,
+    no_telepon  INTEGER NOT NULL,
+    j_kelamin   VARCHAR(1) NOT NULL,
+    alamat      VARCHAR(200) NOT NULL,
+    password    VARCHAR(50) NOT NULL,
+    tgl_lahir   DATE NOT NULL,
+    tmpt_llahir VARCHAR(20) NOT NULL,
+    nik         INTEGER NOT NULL
+);
+
+ALTER TABLE pengguna ADD CONSTRAINT user_pk PRIMARY KEY ( username );
+
 CREATE TABLE rs_rujukan (
     id          INTEGER NOT NULL,
     rumah_sakit VARCHAR(200) NOT NULL,
@@ -65,19 +78,6 @@ CREATE TABLE tempat_tes (
 
 ALTER TABLE tempat_tes ADD CONSTRAINT tempat_tes_pk PRIMARY KEY ( id_tempat );
 
-CREATE TABLE user (
-    username    VARCHAR(50) NOT NULL,
-    no_telepon  INTEGER NOT NULL,
-    j_kelamin   VARCHAR(1) NOT NULL,
-    alamat      VARCHAR(200) NOT NULL,
-    password    VARCHAR(50) NOT NULL,
-    tgl_lahir   DATE NOT NULL,
-    tmpt_llahir VARCHAR(20) NOT NULL,
-    nik         INTEGER NOT NULL
-);
-
-ALTER TABLE user ADD CONSTRAINT user_pk PRIMARY KEY ( username );
-
 CREATE TABLE z_wilayah (
     id_status INTEGER NOT NULL,
     kabupaten VARCHAR(100) NOT NULL,
@@ -94,4 +94,4 @@ ALTER TABLE daftar_swab
 
 ALTER TABLE daftar_swab
     ADD CONSTRAINT daftar_swab_user_fk FOREIGN KEY ( user_username )
-        REFERENCES "user" ( username );
+        REFERENCES pengguna ( username );
