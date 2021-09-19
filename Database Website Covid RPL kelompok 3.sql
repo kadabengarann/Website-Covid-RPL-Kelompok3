@@ -23,14 +23,14 @@ CREATE TABLE daftar_swab (
 ALTER TABLE daftar_swab ADD CONSTRAINT daftar_swab_pk PRIMARY KEY ( id_form );
 
 CREATE TABLE data_covid (
-    id         INTEGER NOT NULL,
-    kabupaten  VARCHAR(50) NOT NULL,
-    suspek     INTEGER NOT NULL,
-    positif    INTEGER NOT NULL,
-    sembuh     INTEGER NOT NULL,
-    dirawat    INTEGER NOT NULL,
-    meninggal  INTEGER NOT NULL,
-    updated_at DATE NOT NULL
+    `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `nama_kabupaten_kota` varchar(50) DEFAULT NULL,
+  `positif` int(11) DEFAULT NULL,
+  `sembuh` int(11) DEFAULT NULL,
+  `dirawat` int(11) DEFAULT NULL,
+  `meninggal` int(11) DEFAULT NULL,
+  `suspek` int(11) DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 );
 
 ALTER TABLE data_covid ADD CONSTRAINT data_covid_pk PRIMARY KEY ( id );
@@ -95,3 +95,22 @@ ALTER TABLE daftar_swab
 ALTER TABLE daftar_swab
     ADD CONSTRAINT daftar_swab_user_fk FOREIGN KEY ( user_username )
         REFERENCES pengguna ( username );
+
+CREATE TABLE IF NOT EXISTS `admins` (
+  `admin_id` varchar(50) NOT NULL,
+  `password` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`admin_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+INSERT INTO `admins` (`admin_id`, `password`) VALUES
+	('admin1', 'password');
+INSERT INTO `data_covid` (`id`, `nama_kabupaten_kota`, `positif`, `sembuh`, `dirawat`, `meninggal`, `suspek`, `updated_at`) VALUES
+	(0, 'Tanah Laut', 8007, 7641, 135, 231, 0, NULL),
+	(1, 'Kotabaru', 3175, 2965, 74, 136, 70, '2021-09-19 17:09:34'),
+	(3, 'Banjar', 5929, 5578, 190, 161, 2, NULL),
+	(5, 'Barito Kuala', 4616, 4392, 63, 161, 9, '2021-02-19 16:11:03'),
+	(6, 'Tapin', 2447, 2330, 20, 97, 0, NULL),
+	(8, 'Hulu Sungai Selatan', 2200, 2116, 11, 73, 0, NULL),
+	(9, 'Hulu Sungai Tengah', 3205, 2919, 128, 158, 0, '2021-03-19 16:03:10'),
+	(10, 'Kotabuuru', 6336, 5578, 235, 523, 523, NULL),
+	(11, 'haiii', 260, 12, 124, 124, 4124, '2021-09-19 23:11:01');
