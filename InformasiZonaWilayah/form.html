@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+        <title>Tambah Informasi Zona Wilayah</title>
+    </head>
+    <body>
+        <div class="container body" align="center">
+        <br><h1 align="center">Tambah Data</h1>
+        <form name="frmAdd" action="tambah.php" method="POST">
+            <div class="item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">ID Wilayah</label>
+              <div class="col-md-6 col-sm-6 ">
+                <input type="text" class="form-control"  name="id" required>
+              </div>
+            </div>
+            <div class="item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Wilayah</label>
+              <div class="col-md-6 col-sm-6 ">
+                <input type="text" class="form-control"  name="nama" required>
+              </div>
+            </div>
+            <div class="item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Password</label>
+              <div class="col-md-6 col-sm-6 ">
+                <input type="text" class="form-control"  name="status_w" required>
+              </div>
+            </div>
+            <div class="item form-group">
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Tanggal</label>
+              <div class="col-md-6 col-sm-6 ">
+                <input type="date" class="form-control" name="tanggal" required>
+              </div>    
+            </div>
+            <br>
+            <div class="item form-group">
+				<div  class="col-md-6 col-sm-6 ">
+                    <input type="submit" name="add_record" class="btn btn-primary" value="tambah">
+                    <a class="btn btn-danger" href="index.php" role="button">Kembali</a>
+                </div>
+			</div>
+          </form>
+        </div>
+    </body>
+</html>
