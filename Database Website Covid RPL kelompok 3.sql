@@ -114,3 +114,20 @@ INSERT INTO `data_covid` (`id`, `nama_kabupaten_kota`, `positif`, `sembuh`, `dir
 	(9, 'Hulu Sungai Tengah', 3205, 2919, 128, 158, 0, '2021-03-19 16:03:10'),
 	(10, 'Kotabuuru', 6336, 5578, 235, 523, 523, NULL),
 	(11, 'haiii', 260, 12, 124, 124, 4124, '2021-09-19 23:11:01');
+INSERT INTO isoman(id_petunjuk,teks_petunjuk)
+VALUES 
+	(1,'Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	<br><br>
+
+	Lorem Ipsum dolor
+	<br><br>
+
+	Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	<br><br>
+
+	<i>Lorem Ipsum dolor sit amet consectetur adipiscing elit Lorem Ipsum dolor sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam Lorem Ipsum dolor</i>
+	<br><br>
+
+	<b>Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</b>
+	<br>');
+
