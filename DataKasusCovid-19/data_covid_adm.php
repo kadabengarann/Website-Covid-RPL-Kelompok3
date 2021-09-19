@@ -1,13 +1,12 @@
 <?php
+
+include_once("../services/loginsessioncheck.php");
+
 if ($_SESSION['level_user'] != 'admin') {
     echo '<script>
     window.location.href="../";
     </script>';
 }
-
-include_once("../services/loginsessioncheck.php");
-
-
 date_default_timezone_set('Asia/Makassar');
 
 require_once("../services/connection.php");
