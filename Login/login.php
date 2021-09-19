@@ -55,13 +55,13 @@ Coded by www.creative-tim.com
               <div class="text-center text-muted mb-4">
                 <small>Log In</small>
               </div>
-              <form role="form">
+              <form action="../services/validation.php" method="POST">
                 <div class="form-group mb-3">
                   <div class="input-group input-group-alternative">
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="fas fa-user"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Username" type="text">
+                    <input class="form-control" placeholder="Username" type="text" name="userlog">
                   </div>
                 </div>
                 <div class="form-group focused">
@@ -69,7 +69,7 @@ Coded by www.creative-tim.com
                     <div class="input-group-prepend">
                       <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
                     </div>
-                    <input class="form-control" placeholder="Password" type="password">
+                    <input class="form-control" placeholder="Password" type="password" name="passlog">
                   </div>
                 </div>
                 <div class="custom-control custom-control-alternative custom-checkbox">
@@ -77,7 +77,7 @@ Coded by www.creative-tim.com
                   <label class="custom-control-label" for=" customCheckLogin"><span>Remember me</span></label>
                 </div>
                 <div class="text-center">
-                  <button type="button" class="btn btn-primary my-4">Sign in</button>
+                  <button type="submit" class="btn btn-primary my-4">Sign in</button>
                 </div>
               </form>
             </div>
