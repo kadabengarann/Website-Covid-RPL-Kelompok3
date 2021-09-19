@@ -81,7 +81,7 @@ include_once("./services/loginsessioncheck.php");
                   <a href="#" class="dropdown-item">Kelola Informasi RS Rujukan</a>
                   <a href="#" class="dropdown-item">Kelola Petunjuk Isoman</a>
                   <a href="./DataKasusCovid-19/data_covid_adm.php" class="dropdown-item">Kelola Data Covid Terkini</a>
-                  <a href="#" class="dropdown-item">Kelola Zona Wilayah</a>
+                  <a href="./InformasiZonaWilayah/" class="dropdown-item">Kelola Zona Wilayah</a>
                 </div>
               </li>
           <?php
@@ -152,7 +152,7 @@ include_once("./services/loginsessioncheck.php");
                   </div>
                   <div class="col-xs-4">
                     <div class="btn-wrapper mt-4">
-                      <a href="#" class="btn text-white btn-outline-secondary btn-icon mt-3 mb-sm-0">
+                      <a href="./InformasiZonaWilayah/" class="btn text-white btn-outline-secondary btn-icon mt-3 mb-sm-0">
                         <span class="btn-inner--text">Status zona</span>
                       </a>
                     </div>

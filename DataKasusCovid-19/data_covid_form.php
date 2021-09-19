@@ -1,11 +1,14 @@
 <?php
-// if ($_SESSION['level_user'] != 'admin')
-// {
-//     echo '<script>
-//     window.location.href="./index.php";
-//     </script>';
-// }
-require_once("./services/connection.php");
+if ($_SESSION['level_user'] != 'admin') {
+    echo '<script>
+    window.location.href="../";
+    </script>';
+}
+
+
+include_once("../services/loginsessioncheck.php");
+
+require_once("../services/connection.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -39,8 +42,8 @@ require_once("./services/connection.php");
     <!-- Navbar -->
     <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg bg-white navbar-light position-sticky top-0 shadow py-2">
         <div class="container">
-            <a class="navbar-brand mr-lg-5" href="#">
-                <img src="./assets/img/logo_white.png">
+            <a class="navbar-brand mr-lg-5" href="../index.php">
+                <img src="../assets/img/logo_ color.png">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -50,7 +53,7 @@ require_once("./services/connection.php");
                     <div class="row">
                         <div class="col-6 collapse-brand">
                             <a href="">
-                                <img src="./assets/img/logo_ color.png">
+                                <img src="../assets/img/logo_ color.png">
                             </a>
                         </div>
                         <div class="col-6 collapse-close">
@@ -74,27 +77,56 @@ require_once("./services/connection.php");
                             <a href="#" class="dropdown-item">Petunjuk Isoman</a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
-                            <i class="ni ni-collection d-lg-none"></i>
-                            <span class="nav-link-inner--text">Admin</span>
-                        </a>
-                        <div class="dropdown-menu">
-                            <a href="#" class="dropdown-item">Kelola Tempat Vaksinasi</a>
-                            <a href="#" class="dropdown-item">Kelola Tempat test SWAB/PCR</a>
-                            <a href="#" class="dropdown-item">Kelola Informasi RS Rujukan</a>
-                            <a href="#" class="dropdown-item">Kelola Petunjuk Isoman</a>
-                            <a href="./DataKasusCovid-19/data_covid_adm.php" class="dropdown-item">Kelola Data Covid Terkini</a>
-                            <a href="#" class="dropdown-item">Kelola Zona Wilayah</a>
-                        </div>
-                    </li>
+                    <?php
+                    if (isset($_SESSION['login_user'])) {
+                        if ($_SESSION['level_user'] == 'admin') {
+                    ?>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
+                                    <i class="ni ni-collection d-lg-none"></i>
+                                    <span class="nav-link-inner--text">Admin</span>
+                                </a>
+                                <div class="dropdown-menu">
+                                    <a href="#" class="dropdown-item">Kelola Tempat Vaksinasi</a>
+                                    <a href="#" class="dropdown-item">Kelola Tempat test SWAB/PCR</a>
+                                    <a href="#" class="dropdown-item">Kelola Informasi RS Rujukan</a>
+                                    <a href="#" class="dropdown-item">Kelola Petunjuk Isoman</a>
+                                    <a href="./DataKasusCovid-19/data_covid_adm.php" class="dropdown-item">Kelola Data Covid Terkini</a>
+                                    <a href="#" class="dropdown-item">Kelola Zona Wilayah</a>
+                                </div>
+                            </li>
+                    <?php
+                        }
+                    }
+                    ?>
                 </ul>
                 <ul class="navbar-nav align-items-lg-center ml-lg-auto">
-                    <li class="nav-item">
-                        <a class="btn btn-neutral" href="./Login/login.php">
-                            <span class="nav-link-inner--text">Log In</span>
-                        </a>
-                    </li>
+                    <?php
+                    if (isset($_SESSION['login_user'])) {
+                    ?>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle nav-link-icon" href="javascript:;" id="nav-inner-success_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="ni ni-settings-gear-65"></i>
+                                <span class="nav-link-inner--text d-lg-none">Settings</span>
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="nav-inner-success_dropdown_1">
+                                <a class="dropdown-item" href="javascript:;">Profile</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="../services/logout.php">Logout</a>
+                            </div>
+                        </li>
+                    <?php
+                    } else {
+                    ?>
+                        <li class="nav-item">
+                            <a class="btn btn-neutral" href="../Login/login.php">
+                                <span class="nav-link-inner--text">Log In</span>
+                            </a>
+                        </li>
+
+                    <?php
+                    }
+                    ?>
                 </ul>
             </div>
         </div>

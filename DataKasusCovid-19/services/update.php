@@ -1,6 +1,6 @@
 <?php
 
-require_once("connection.php");
+require_once("../services/connection.php");
 
 if (!empty($_POST["update_data_covid"])) {
     date_default_timezone_set('Asia/Makassar');
