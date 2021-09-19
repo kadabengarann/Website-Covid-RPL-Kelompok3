@@ -1,0 +1,56 @@
+.form{
+    text-align: center;
+}
+.form ol li{
+    text-align: left;
+}
+.btn {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.btn1 {background-color: #09ac0e;}
+.btn2 {background-color: #b61111;}
+
+.formvaksin {
+    border:5px;
+    background-color: white;
+    text-align: center;
+    border-radius: 15px;
+    width: 400px;
+    height: 580px;
+    display: inline-block;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.formvaksin p{
+    text-align: left;
+    margin: 10px 10px 10px 10px;
+}
+
+.formvaksin p input {
+    width: 370px;
+    height : 30px;
+    border-radius: 5px;
+    border: none;
+    background-color: #e6e6e6;
+}
+.formvaksin p select {
+    width: 375px;
+    height : 37px;
+    border-radius: 5px;
+    border: none;
+    background-color: #e6e6e6;
+}
+.formvaksin p input#Laki{
+    width: 15px;
+}
+.formvaksin p input#Prmpuan{
+    width: 15px;
+}
