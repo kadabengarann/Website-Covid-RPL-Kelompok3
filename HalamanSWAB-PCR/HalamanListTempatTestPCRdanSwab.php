@@ -9,7 +9,7 @@
     </div>
     <meta charset="utf-8">
     <title>List RS Penyedia Test</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <div id="belakang"></div>
