@@ -1,14 +1,13 @@
 <?php
 
 if (!empty($_POST["add_data_covid"])) {
-	// $firstname = explode(' ', $_POST['nama']);
-	// $usPass = strtolower($firstname[0]);
-	$positif = 6969;
+	date_default_timezone_set('Asia/Makassar');
+	$date = date('Y-m-d H:i:s');
 	require_once("connection.php");
-	$sql = "INSERT INTO `db_covid`.`data_covid` (`nama_kabupaten_kota`, `positif`, `sembuh`, `dirawat`, `meninggal`, `suspek`) VALUES (:nama_kabupaten_kota, :positif, :sembuh, :dirawat, :meninggal, :suspek);";
+	$sql = "INSERT INTO `db_covid`.`data_covid` (`nama_kabupaten_kota`, `positif`, `sembuh`, `dirawat`, `meninggal`, `suspek`, `updated_at`) VALUES (:nama_kabupaten_kota, :positif, :sembuh, :dirawat, :meninggal, :suspek, :updated_at);";
 	$stmt = $pdo_conn->prepare($sql);
 	$result = $stmt->execute(array(
-		':nama_kabupaten_kota' => $_POST['nama'], ':positif' => $_POST['positif'], ':sembuh' => $_POST['sembuh'], ':dirawat' => $_POST['dirawat'], ':meninggal' => $_POST['meninggal'], ':suspek' => $_POST['suspek']
+		':nama_kabupaten_kota' => $_POST['nama'], ':positif' => $_POST['positif'], ':sembuh' => $_POST['sembuh'], ':dirawat' => $_POST['dirawat'], ':meninggal' => $_POST['meninggal'], ':suspek' => $_POST['suspek'], ':updated_at' => $date
 	));
 	if (!empty($result)) {
 		echo '<script>
