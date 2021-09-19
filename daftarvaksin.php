@@ -29,7 +29,7 @@
                     <input type="date" name="BornDate" id="Borndate">
                 </p>
                 <p>
-                    Gender<br>
+                    Jenis Kelamin<br>
                     <input type="radio" name="Gender" id="Laki">
                     <label for="Laki">Laki - laki</label><br>
                     <input type="radio" name="Gender" id="Prmpuan">
@@ -57,7 +57,7 @@
                         ?>
                     </select>
                 </p>
-                <br><br>
+                <br>
                 <button class="button button1" type="submit" form="" value="Submit">Submit</button>
                 <button class="button button2" type="button" href="syaratvaksin.html">Kembali </button>
             </form>

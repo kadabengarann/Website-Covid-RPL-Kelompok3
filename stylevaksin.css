@@ -73,9 +73,6 @@ input::-webkit-inner-spin-button {
     width: 370px;
 }
 
-.gender{
-    width: 0px 0px 0px 370px;
-}
 body {
     background-color: rgb(207, 207, 207);
 }
