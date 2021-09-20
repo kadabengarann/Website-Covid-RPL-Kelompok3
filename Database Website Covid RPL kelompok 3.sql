@@ -24,7 +24,7 @@ ALTER TABLE daftar_swab ADD CONSTRAINT daftar_swab_pk PRIMARY KEY ( id_form );
 
 CREATE TABLE IF NOT EXISTS `data_covid` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `nama_kabupaten_kota` varchar(50) DEFAULT NULL,
+  `kabupaten` varchar(50) DEFAULT NULL,
   `positif` int(11) DEFAULT NULL,
   `sembuh` int(11) DEFAULT NULL,
   `dirawat` int(11) DEFAULT NULL,
@@ -77,15 +77,14 @@ CREATE TABLE tempat_tes (
 
 ALTER TABLE tempat_tes ADD CONSTRAINT tempat_tes_pk PRIMARY KEY ( id_tempat );
 
-CREATE TABLE z_wilayah (
-    id_status INTEGER NOT NULL,
-    kabupaten VARCHAR(100) NOT NULL,
-    zona      VARCHAR(50) NOT NULL,
+CREATE TABLE wilayah (
+    id INTEGER NOT NULL,
+    nama VARCHAR(100) NOT NULL,
+    status_w      VARCHAR(50) NOT NULL,
     tanggal   DATE NOT NULL
 );
 
-ALTER TABLE z_wilayah ADD CONSTRAINT z_wilayah_pk PRIMARY KEY ( kabupaten,
-                                                                id_status );
+ALTER TABLE wilayah ADD CONSTRAINT wilayah_pk PRIMARY KEY ( nama, id);
 
 ALTER TABLE daftar_swab
     ADD CONSTRAINT daftar_swab_tempat_tes_fk FOREIGN KEY ( tempat_tes_id_tempat )
@@ -104,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `admins` (
 
 INSERT INTO `admins` (`admin_id`, `password`) VALUES
 	('admin1', 'password');
-INSERT INTO `data_covid` (`id`, `nama_kabupaten_kota`, `positif`, `sembuh`, `dirawat`, `meninggal`, `suspek`, `updated_at`) VALUES
+INSERT INTO `data_covid` (`id`, `kabupaten`, `positif`, `sembuh`, `dirawat`, `meninggal`, `suspek`, `updated_at`) VALUES
 	(0, 'Tanah Laut', 8007, 7641, 135, 231, 0, NULL),
 	(1, 'Kotabaru', 3175, 2965, 74, 136, 70, '2021-09-19 17:09:34'),
 	(3, 'Banjar', 5929, 5578, 190, 161, 2, NULL),
@@ -114,6 +113,22 @@ INSERT INTO `data_covid` (`id`, `nama_kabupaten_kota`, `positif`, `sembuh`, `dir
 	(9, 'Hulu Sungai Tengah', 3205, 2919, 128, 158, 0, '2021-03-19 16:03:10'),
 	(10, 'Kotabuuru', 6336, 5578, 235, 523, 523, NULL),
 	(11, 'haiii', 260, 12, 124, 124, 4124, '2021-09-19 23:11:01');
+INSERT INTO isoman(id_petunjuk,teks_petunjuk)
+VALUES 
+	(1,'Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	<br><br>
+
+	Lorem Ipsum dolor
+	<br><br>
+
+	Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	<br><br>
+
+	<i>Lorem Ipsum dolor sit amet consectetur adipiscing elit Lorem Ipsum dolor sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim ad minim veniam Lorem Ipsum dolor</i>
+	<br><br>
+
+	<b>Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</b>
+	<br>');
 
 create table `form_vaksinasi` (
 	`Nama` varchar (150),
@@ -124,3 +139,4 @@ create table `form_vaksinasi` (
 	`provinsi_daftar` varchar (150),
 	`kota_daftar` varchar (150)
 ); 
+

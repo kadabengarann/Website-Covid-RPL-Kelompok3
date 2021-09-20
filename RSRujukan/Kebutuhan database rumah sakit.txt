@@ -1,0 +1,6 @@
+Kebutuhan Kolom Database Rumah Sakit rujukan
+1. Nama Rumah Sakit
+2. Kabupaten
+3. Alamat Rumah Sakit
+4. Kapasitas saat ini.
+5. Nomor yang bisa dihubungi
