@@ -130,6 +130,17 @@ VALUES
 	<b>Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</b>
 	<br>');
 
+insert into wilayah (id, nama, status_W, tanggal) values
+	(0, 'Tanah Laut', 'Merah', '2021-09-19'),
+	(1, 'Kotabaru', 'Merah', '2021-09-19'),
+	(3, 'Banjar', 'Merah', '2021-09-19'),
+	(5, 'Barito Kuala', 'Merah', '2021-09-19'),
+	(6, 'Tapin', 'Merah', '2021-09-19'),
+	(8, 'Hulu Sungai Selatan', 'Merah', '2021-09-19'),
+	(9, 'Hulu Sungai Tengah', 'Merah', '2021-09-19'),
+	(10, 'Kotabaru', 'Merah', '2021-09-19'),
+	(11, 'Hulu Sungai Utara', 'Merah', '2021-09-19');
+
 create table `form_vaksinasi` (
 	`Nama` varchar (150),
 	`NIK` int (20),
