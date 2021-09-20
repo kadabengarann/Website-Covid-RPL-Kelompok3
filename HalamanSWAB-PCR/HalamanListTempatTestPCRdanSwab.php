@@ -26,25 +26,27 @@
       <br></br>
       <p>Jam Operasional RS Mayapada Jakarta Selatan:</p>
         <p>Senin - Minggu: 08.00 - 15.00 WIB</p>
+        <p>hotline: (021) 29217777 dan whatsapp: 08157511-1999</p>
           </div>
 
 
     <div class="wrapper">
-      <h2>Uji Coba</h2>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    </div>
+      <img src="./RS Ibu dan Anak Bundadari.jpg" height="200" width="200">
+      <h2>RS Ibu dan Anak Bundadari</h2>
+      <p>RS Ibu dan Anak Bundadari termasuk rumah sakit dan klinik penyedia layanan test PCR Swab. Lewat IG resminya: @simulasi_rsbundadari menyebut kalau Bundadari Hospital memiliki berbagai paket layanan PCR Swab Test,
+        antara lain: layanan basic, silver, gold dan platinum.
+      <br></br>
+      <p>RS Bundadari mematok harga test PCR swab test seharga:.</p>
+<br></br>
+      <p>PCR Swab Test : Rp. 1.250.000(Gold)</p>
+      <p>PCR Swab Test : Rp. 750.000(Silver)</p>
+      <p>Untuk hasil GOld, hasil test akan keluar setelah 12 Jam, sementara silver akan keluar setalah +3 Hari</p>
+      <br></br>
+      <p>Jam Operasional RS Ibu dan Anak Bundadari:</p>
+        <p>Senin - Minggu: 09.00 - 17.00 WIB</p>
+        <p>hotline: (021) 593110 </p>
+          </div>
 
-
-    <div class="wrapper">
-      <h2>Uji Coba</h2>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    </div>
-
-
-    <div class="wrapper">
-      <h2>Uji Coba</h2>
-      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    </div>
     <script type="text/javascript">
       var bgpattern = document.getElementById("belakang")
       window.addEventListener("scroll", function(){
