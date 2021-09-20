@@ -34,7 +34,7 @@ $result = $stmt->fetchAll();
               </div>
             </div>
             <div class="item form-group">
-              <label class="col-form-label col-md-3 col-sm-3 label-align">Password</label>
+              <label class="col-form-label col-md-3 col-sm-3 label-align">Status</label>
               <div class="col-md-6 col-sm-6 ">
                 <input type="text" class="form-control"  name="status_w" value="<?php echo $result[0]['status_w']; ?>" required>
               </div>
