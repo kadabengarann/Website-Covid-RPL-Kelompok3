@@ -130,3 +130,13 @@ VALUES
 	<b>Lorem Ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</b>
 	<br>');
 
+create table `form_vaksinasi` (
+	`Nama` varchar (150),
+	`NIK` int (20),
+	`Jenis_Kelamin` varchar (30),
+	`Tanggal_Lahir` date ,
+	`No_Telp` int (20),
+	`provinsi_daftar` varchar (150),
+	`kota_daftar` varchar (150)
+); 
+

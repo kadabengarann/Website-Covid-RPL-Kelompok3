@@ -1,7 +1,7 @@
 <?php
 try {
     $pdo_conn = new PDO(
-        'mysql:host=localhost;dbname=db_covid',
+        'mysql:host=localhost;dbname=covid',
         'root',
         '',
         array(PDO::ATTR_PERSISTENT => true)
