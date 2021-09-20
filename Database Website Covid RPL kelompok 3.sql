@@ -77,15 +77,14 @@ CREATE TABLE tempat_tes (
 
 ALTER TABLE tempat_tes ADD CONSTRAINT tempat_tes_pk PRIMARY KEY ( id_tempat );
 
-CREATE TABLE z_wilayah (
-    id_status INTEGER NOT NULL,
-    kabupaten VARCHAR(100) NOT NULL,
-    zona      VARCHAR(50) NOT NULL,
+CREATE TABLE wilayah (
+    id INTEGER NOT NULL,
+    nama VARCHAR(100) NOT NULL,
+    status_w      VARCHAR(50) NOT NULL,
     tanggal   DATE NOT NULL
 );
 
-ALTER TABLE z_wilayah ADD CONSTRAINT z_wilayah_pk PRIMARY KEY ( kabupaten,
-                                                                id_status );
+ALTER TABLE wilayah ADD CONSTRAINT wilayah_pk PRIMARY KEY ( nama, id);
 
 ALTER TABLE daftar_swab
     ADD CONSTRAINT daftar_swab_tempat_tes_fk FOREIGN KEY ( tempat_tes_id_tempat )
