@@ -152,7 +152,7 @@ include_once("./services/loginsessioncheck.php");
                   </div>
                   <div class="col-xs-4">
                     <div class="btn-wrapper mt-4">
-                      <a href="./InformasiZonaWilayah/" class="btn text-white btn-outline-secondary btn-icon mt-3 mb-sm-0">
+                      <a href="./InformasiZonaWilayah/tampilp.php" class="btn text-white btn-outline-secondary btn-icon mt-3 mb-sm-0">
                         <span class="btn-inner--text">Status zona</span>
                       </a>
                     </div>
