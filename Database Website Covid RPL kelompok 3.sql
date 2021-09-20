@@ -24,7 +24,7 @@ ALTER TABLE daftar_swab ADD CONSTRAINT daftar_swab_pk PRIMARY KEY ( id_form );
 
 CREATE TABLE IF NOT EXISTS `data_covid` (
   `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-  `nama_kabupaten_kota` varchar(50) DEFAULT NULL,
+  `kabupaten` varchar(50) DEFAULT NULL,
   `positif` int(11) DEFAULT NULL,
   `sembuh` int(11) DEFAULT NULL,
   `dirawat` int(11) DEFAULT NULL,
@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `admins` (
 
 INSERT INTO `admins` (`admin_id`, `password`) VALUES
 	('admin1', 'password');
-INSERT INTO `data_covid` (`id`, `nama_kabupaten_kota`, `positif`, `sembuh`, `dirawat`, `meninggal`, `suspek`, `updated_at`) VALUES
+INSERT INTO `data_covid` (`id`, `kabupaten`, `positif`, `sembuh`, `dirawat`, `meninggal`, `suspek`, `updated_at`) VALUES
 	(0, 'Tanah Laut', 8007, 7641, 135, 231, 0, NULL),
 	(1, 'Kotabaru', 3175, 2965, 74, 136, 70, '2021-09-19 17:09:34'),
 	(3, 'Banjar', 5929, 5578, 190, 161, 2, NULL),
