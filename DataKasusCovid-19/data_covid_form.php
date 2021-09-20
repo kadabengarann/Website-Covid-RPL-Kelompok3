@@ -7,6 +7,7 @@ if ($_SESSION['level_user'] != 'admin') {
     window.location.href="../";
     </script>';
 }
+
 require_once("../services/connection.php");
 ?>
 <!DOCTYPE html>
@@ -41,7 +42,7 @@ require_once("../services/connection.php");
     <!-- Navbar -->
     <nav id="navbar-main" class="navbar navbar-main navbar-expand-lg bg-white navbar-light position-sticky top-0 shadow py-2">
         <div class="container">
-            <a class="navbar-brand mr-lg-5" href="../index.php">
+            <a class="navbar-brand mr-lg-5" href="../">
                 <img src="../assets/img/logo_ color.png">
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,6 +72,7 @@ require_once("../services/connection.php");
                         </a>
                         <div class="dropdown-menu">
                             <a href="#" class="dropdown-item">Tempat Vaksinasi</a>
+                            <a href="../PendaftaranVaksin/syaratvaksin.php" class="dropdown-item">Pendaftaran Vaksinasi</a>
                             <a href="#" class="dropdown-item">Tempat test SWAB/PCR</a>
                             <a href="#" class="dropdown-item">Informasi RS Rujukan</a>
                             <a href="#" class="dropdown-item">Petunjuk Isoman</a>
@@ -90,8 +92,8 @@ require_once("../services/connection.php");
                                     <a href="#" class="dropdown-item">Kelola Tempat test SWAB/PCR</a>
                                     <a href="#" class="dropdown-item">Kelola Informasi RS Rujukan</a>
                                     <a href="#" class="dropdown-item">Kelola Petunjuk Isoman</a>
-                                    <a href="./DataKasusCovid-19/data_covid_adm.php" class="dropdown-item">Kelola Data Covid Terkini</a>
-                                    <a href="#" class="dropdown-item">Kelola Zona Wilayah</a>
+                                    <a href="./data_covid_adm.php" class="dropdown-item">Kelola Data Covid Terkini</a>
+                                    <a href="../InformasiZonaWilayah/" class="dropdown-item">Kelola Zona Wilayah</a>
                                 </div>
                             </li>
                     <?php
@@ -163,7 +165,7 @@ require_once("../services/connection.php");
                                                         <h4 class="text-right">Data Covid</h4>
                                                     </div>
                                                     <div class="row mt-2">
-                                                        <div class="col-md-12"><label class="labels  mb-2">Nama Kabupaten/Kota</label><input type="text" class="form-control" placeholder="Nama Kabupaten/Kota" value="<?php echo $result[0]['nama_kabupaten_kota']; ?>" name="nama" required></div>
+                                                        <div class="col-md-12"><label class="labels  mb-2">Nama Kabupaten/Kota</label><input type="text" class="form-control" placeholder="Nama Kabupaten/Kota" value="<?php echo $result[0]['kabupaten']; ?>" name="nama" required></div>
                                                     </div>
                                                     <div class="row mt-3">
                                                         <div class="col-md-3 mb-3"><label class="labels">Sembuh</label><input type="text" class="form-control editInput" id="edit1" value="<?php echo $result[0]['sembuh']; ?>" placeholder="" name="sembuh" required=""></div>

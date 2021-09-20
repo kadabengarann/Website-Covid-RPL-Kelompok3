@@ -1,5 +1,5 @@
 <?php
-require_once("../services/connection.php");
+require_once("../../services/connection.php");
 $stmt = $pdo_conn->prepare("delete from data_covid where id='" . $_GET['id'] . "';");
 $stmt->execute();
 echo '<script>

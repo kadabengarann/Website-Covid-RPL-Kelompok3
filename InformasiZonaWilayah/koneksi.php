@@ -1,6 +1,6 @@
 <?php
 try {
-$pdo_conn = new PDO('mysql:host=localhost;dbname=zona', 'root', '',
+$pdo_conn = new PDO('mysql:host=localhost;dbname=covid', 'root', '',
 array(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION,PDO::ATTR_PERSISTENT => true));
 }
 catch(PDOException $e) {

@@ -29,7 +29,6 @@ include_once "paging.php";
                         <th>Wilayah</th>
                         <th>Zona</th>
                         <th>Tanggal</th>
-                        <th>Aksi</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,10 +41,6 @@ include_once "paging.php";
                                 <td><?php echo $row["nama"]; ?></td>
                                 <td><?php echo $row["status_w"]; ?></td>
                                 <td><?php echo $row["tanggal"]; ?></td>
-                                <td>
-                                    <a href='edit.php?id=<?php echo $row['id']; ?>'class="btn btn-primary" role="button">edit</a>
-                                    <a href='hapus.php?id=<?php echo $row['id']; ?>' onclick="return confirm('Yakin Hapus?')"class="btn btn-danger" role="button">hapus</a>
-                                </td>
                             </tr>
                     <?php
                         }
