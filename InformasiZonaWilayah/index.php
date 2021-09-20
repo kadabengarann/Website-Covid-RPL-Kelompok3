@@ -20,6 +20,7 @@ include_once "paging.php";
             <br>
             <center><h1>Informasi Zona Wilayah</h1></center><br>
             <a class="btn btn-primary" href="form.html" role="button">Tambah</a>
+            <a class="btn btn-primary" href="../index.php" role="button">Kembali</a>
             <div class="table-responsive">
             <table class="table table-striped jambo_table bulk_action">
                 <thead>
