@@ -1,4 +1,5 @@
 <?php
+
 include_once("../services/loginsessioncheck.php");
 
 if ($_SESSION['level_user'] != 'admin') {
