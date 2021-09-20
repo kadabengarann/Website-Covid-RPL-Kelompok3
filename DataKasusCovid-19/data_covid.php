@@ -1,6 +1,6 @@
 <?php
 include_once("../services/loginsessioncheck.php");
-date_default_timezone_set('Asia/Makassar');
+
 require_once("../services/connection.php");
 $stmt = $pdo_conn->prepare("SELECT * FROM data_covid");
 $stmt->execute();
@@ -9,6 +9,11 @@ $result = $stmt->fetchAll();
 $stmt1 = $pdo_conn->prepare("select sum(positif) AS positif,sum(sembuh) AS sembuh,sum(dirawat) AS dirawat,sum(meninggal) AS meninggal,sum(suspek) AS suspek from data_covid");
 $stmt1->execute();
 $result1 = $stmt1->fetchAll();
+
+$stmt = $pdo_conn->prepare("SELECT MAX(updated_at) AS date_update FROM data_covid;");
+$stmt->execute();
+$result2 = $stmt->fetchAll();
+$date_update = date("d, Y H:i:s", strtotime($result2[0]["date_update"]));
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -91,7 +96,7 @@ $result1 = $stmt1->fetchAll();
                                     <a href="#" class="dropdown-item">Kelola Tempat test SWAB/PCR</a>
                                     <a href="#" class="dropdown-item">Kelola Informasi RS Rujukan</a>
                                     <a href="#" class="dropdown-item">Kelola Petunjuk Isoman</a>
-                                    <a href="./DataKasusCovid-19/data_covid_adm.php" class="dropdown-item">Kelola Data Covid Terkini</a>
+                                    <a href="./data_covid_adm.php" class="dropdown-item">Kelola Data Covid Terkini</a>
                                     <a href="#" class="dropdown-item">Kelola Zona Wilayah</a>
                                 </div>
                             </li>
@@ -135,93 +140,147 @@ $result1 = $stmt1->fetchAll();
     <div class="wrapper">
         <div class="section pt-4">
             <div class="container">
-                <a class="navbar-brand mr-lg-5" href="../">
-                    <img src="../assets/img/logo_ color.png">
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse" id="navbar_global">
-                    <div class="navbar-collapse-header">
-                        <div class="row">
-                            <div class="col-6 collapse-brand">
-                                <a href="">
-                                    <img src="../assets/img/logo_ color.png">
-                                </a>
+                <div class="card shadow">
+                    <div class="px-5 pt-2">
+                        <div class="row justify-content-center">
+                            <div class="col">
+                                <div class="card bg-transparent no-shadow mb-0">
+                                    <div class="card-body bg-transparent px-0">
+                                        <h2 class="h2 card-title mb-0">Sebaran Covid di Kalimantan Selatan</h2>
+                                        <small class="h4 text-muted"><?php echo date("F", strtotime($result2[0]["date_update"])) . " " . $date_update;
+                                                                        ?></small>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="col-6 collapse-close">
-                                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar_global" aria-controls="navbar_global" aria-expanded="false" aria-label="Toggle navigation">
-                                    <span></span>
-                                    <span></span>
-                                </button>
+                        </div>
+                        <div class="row ">
+                            <div class="col-md-12 ">
+                                <div class="card text-white bg-warning mb-4">
+                                    <div class="card-body">
+                                        <div class="row align-items-center">
+                                            <div class="col">
+                                                <h3 class="card-title">POSITIF<small> (Dirawat, Meninggal & Sembuh)</small></h3>
+                                                <h3 class="card-text"><span class="h1"><?php echo $result1[0]["positif"]; ?></span> Orang</h3>
+                                            </div>
+                                            <div class="col-auto">
+                                                <div class="icon icon-shape text-dark bg-white rounded-circle shadow">
+                                                    <i class="fas fa-head-side-mask"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 ">
+                                <div class="card text-white bg-primary mb-4">
+                                    <div class="card-body">
+                                        <div class="row align-items-center">
+                                            <div class="col">
+                                                <h3 class="card-title">DIRAWAT</h3>
+                                                <h3 class="card-text"><span class="h1"><?php echo $result1[0]["dirawat"]; ?></span> Orang</h3>
+                                            </div>
+                                            <div class="col-auto">
+                                                <div class="icon icon-shape text-dark bg-white rounded-circle shadow">
+                                                    <i class="fas fa-procedures"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 ">
+                                <div class="card text-white bg-dark mb-4">
+                                    <div class="card-body">
+                                        <div class="row align-items-center">
+                                            <div class="col">
+                                                <h3 class="card-title">MENINGGAL</h3>
+                                                <h3 class="card-text"><span class="h1"><?php echo $result1[0]["meninggal"]; ?></span> Orang</h3>
+                                            </div>
+                                            <div class="col-auto">
+                                                <div class="icon icon-shape text-dark bg-white rounded-circle shadow">
+                                                    <i class="fas fa-skull-crossbones"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 ">
+                                <div class="card text-white bg-success mb-4">
+                                    <div class="card-body">
+                                        <div class="row align-items-center">
+                                            <div class="col">
+                                                <h3 class="card-title">SEMBUH</h3>
+                                                <h3 class="card-text"><span class="h1"><?php echo $result1[0]["sembuh"]; ?></span> Orang</h3>
+                                            </div>
+                                            <div class="col-auto">
+                                                <div class="icon icon-shape text-dark bg-white rounded-circle shadow">
+                                                    <i class="far fa-smile"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-md-12">
+                                <div class="card bg-transparent ">
+                                    <div class="card-body bg-transparent">
+                                        <table class="table table-striped table-hover">
+                                            <thead>
+                                                <tr>
+                                                    <th scope="col" rowspan="2">No.</th>
+                                                    <th scope="col" rowspan=" 2">Kabupaten/Kota</th>
+                                                    <th scope="col" rowspan="2" class="align-center">Suspek</th>
+                                                    <th scope="col" colspan="4" class="text-center">Kasus COVID-19</th>
+                                                </tr>
+                                                <tr>
+                                                    <th scope="col">Positif</th>
+                                                    <th scope="col">Sembuh</th>
+                                                    <th scope="col">Dirawat</th>
+                                                    <th scope="col">Meninggal</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php
+                                                if (!empty($result)) {
+                                                    $count = 1;
+                                                    foreach ($result as $row) {
+                                                ?>
+                                                        <tr>
+                                                            <th scope="row"><?php echo $count; ?></th>
+                                                            <td><?php echo $row["kabupaten"]; ?></td>
+                                                            <td><?php echo $row["suspek"]; ?></td>
+                                                            <td><?php echo $row["positif"]; ?></td>
+                                                            <td><?php echo $row["sembuh"]; ?></td>
+                                                            <td><?php echo $row["dirawat"]; ?></td>
+                                                            <td><?php echo $row["meninggal"]; ?></td>
+                                                        </tr>
+                                                    <?php
+                                                        $count++;
+                                                    }
+                                                } else {
+                                                    ?>
+                                                    <tr>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                        <td>-</td>
+                                                    </tr>
+                                                <?php
+                                                }
+                                                ?>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <ul class="navbar-nav navbar-nav-hover align-items-lg-center">
-                        <li class="nav-item dropdown">
-                            <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
-                                <i class="ni ni-collection d-lg-none"></i>
-                                <span class="nav-link-inner--text">Layanan</span>
-                            </a>
-                            <div class="dropdown-menu">
-                                <a href="#" class="dropdown-item">Tempat Vaksinasi</a>
-                                <a href="../PendaftaranVaksin/syaratvaksin.php" class="dropdown-item">Pendaftaran Vaksinasi</a>
-                                <a href="#" class="dropdown-item">Tempat test SWAB/PCR</a>
-                                <a href="#" class="dropdown-item">Informasi RS Rujukan</a>
-                                <a href="#" class="dropdown-item">Petunjuk Isoman</a>
-                            </div>
-                        </li>
-                        <?php
-                        if (isset($_SESSION['login_user'])) {
-                            if ($_SESSION['level_user'] == 'admin') {
-                        ?>
-                                <li class="nav-item dropdown">
-                                    <a href="#" class="nav-link" data-toggle="dropdown" href="#" role="button">
-                                        <i class="ni ni-collection d-lg-none"></i>
-                                        <span class="nav-link-inner--text">Admin</span>
-                                    </a>
-                                    <div class="dropdown-menu">
-                                        <a href="#" class="dropdown-item">Kelola Tempat Vaksinasi</a>
-                                        <a href="#" class="dropdown-item">Kelola Tempat test SWAB/PCR</a>
-                                        <a href="#" class="dropdown-item">Kelola Informasi RS Rujukan</a>
-                                        <a href="#" class="dropdown-item">Kelola Petunjuk Isoman</a>
-                                        <a href="./data_covid_adm.php" class="dropdown-item">Kelola Data Covid Terkini</a>
-                                        <a href="../InformasiZonaWilayah/" class="dropdown-item">Kelola Zona Wilayah</a>
-                                    </div>
-                                </li>
-                        <?php
-                            }
-                        }
-                        ?>
-                    </ul>
-                    <ul class="navbar-nav align-items-lg-center ml-lg-auto">
-                        <?php
-                        if (isset($_SESSION['login_user'])) {
-                        ?>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle nav-link-icon" href="javascript:;" id="nav-inner-success_dropdown_1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="ni ni-settings-gear-65"></i>
-                                    <span class="nav-link-inner--text d-lg-none">Settings</span>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="nav-inner-success_dropdown_1">
-                                    <a class="dropdown-item" href="javascript:;">Profile</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="../services/logout.php">Logout</a>
-                                </div>
-                            </li>
-                        <?php
-                        } else {
-                        ?>
-                            <li class="nav-item">
-                                <a class="btn btn-neutral" href="../Login/login.php">
-                                    <span class="nav-link-inner--text">Log In</span>
-                                </a>
-                            </li>
-
-                        <?php
-                        }
-                        ?>
-                    </ul>
                 </div>
             </div>
         </div>
