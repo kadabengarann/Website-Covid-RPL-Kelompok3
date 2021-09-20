@@ -12,7 +12,7 @@ include_once("./services/loginsessioncheck.php");
   <link rel="apple-touch-icon" sizes="76x76" href="./vendors/argon-design-system-master/assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="./vendors/argon-design-system-master/assets/img/favicon.png">
   <title>
-    Website Covid Kel3
+    Website Covid Kel-3
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
